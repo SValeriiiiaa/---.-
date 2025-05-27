@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <math.h>
+
+float f1(float x){
+    return sin(x)*cos(x);
+}
+float f2(float x){
+    return pow(x+10, 5);
+}
+float f3(float x){
+    return 14*sin(x);
+}
+
+int main(){
+    float a=0, b=6, n=7;
+    float h=(b-a)/n;
+
+    printf("|----------------------------------------------------|\n");
+    printf("|             functions of one change                |\n");
+    printf("|----------------------------------------------------|\n");
+    printf("|   x    | sin(x)*cos(x)| pow(x + 10, 5)|  14*sin(x) |\n");
+    printf("|----------------------------------------------------|\n");
+
+    for (float i=a; i<=n; i++){
+        float x=a+i*h;
+        float r1=f1(x);
+        float r2=f2(x);
+        float r3=f3(x);
+        printf("| %6.2f | %10.3f   | %10.2f    | %10.3f |\n", x, r1, r2, r3);
+        if (i<n){
+            printf("|----------------------------------------------------|\n");
+        }
+    }
+    printf("|----------------------------------------------------|\n");
+    printf("|                   made by Sapozhko Valeria, KV-31  |\n");
+    printf("|----------------------------------------------------|\n");
+
+    return 0;
+}
